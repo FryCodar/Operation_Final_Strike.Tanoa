@@ -23,4 +23,5 @@ If(count _holder > 0)then
   ARR_ADDARR(_holder,_this);
 }else{_holder = _this};
 missionNamespace setVariable [STRVAR_DO(diary_mission_records),_holder,true];
-REMOTE_TRIEXESM(_this,briefing,addNewDiary,([0, -2] select isMultiplayer));
+private _state = [0,-2] select isMultiplayer;
+REMOTE_TRIEXESM(_this,briefing,addNewDiary,_state);

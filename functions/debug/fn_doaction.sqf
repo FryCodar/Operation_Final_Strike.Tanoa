@@ -29,7 +29,7 @@ params ["_obj","_caller","_idx","_xtra"];
             //ZWEITER TESTBEREICH
             hint "Script 2 begins";
             //______________________________________________________________________________________________________________________________
-
+            copyToClipboard str (getPos TR21);
           };
    case 4:{
             If(captive player)then

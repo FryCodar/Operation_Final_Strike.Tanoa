@@ -3,8 +3,7 @@ If(isMultiplayer)then{If(!isServer)exitWith{};};
 /* --------------------------------------------------------------------------------------------------------------
 Function: MSOT_usage_fnc_deleteAllInArea
 
-Description: Creates an Diary Record to Player
-
+Description:  delete Objects in a defined Area
 Parameters: [POSITION,RADIUS]
 
             POSITION    -   ARRAY with Coordinates

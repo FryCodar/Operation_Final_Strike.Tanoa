@@ -19,7 +19,7 @@ Examples:
 Author: Fry
 
 ----------------------------------------------------------------------------------------------------------------- */
-private ["_title","_text"]
+private ["_title","_text"];
 params ["_idx"];
 _title = ""; _text = "";
 switch(_idx)do
