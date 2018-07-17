@@ -42,7 +42,10 @@ switch(["who_is_medic", 0] call BFUNC(getParamValue))do
 
 // Setzt Briefing
 [] call MFUNC(briefing,addBriefing);
-
+If(count (missionNamespace getVariable [STRVAR_DO(diary_mission_records),[]]) > 0)then
+{
+  {[_x] call MFUNC(briefing,addNewDiary);}forEach (missionNamespace getVariable [STRVAR_DO(diary_mission_records),[]]);
+};
 //Checkt Respawn Positionen ab
 If(count (missionNamespace getVariable [STRVAR_DO(resp_poses),[]]) > 0)then
 {
