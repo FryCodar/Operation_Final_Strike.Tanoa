@@ -7,5 +7,9 @@ class TAGADD
 			 class addBriefing {
 				 										description = "Add a defined Briefing to Client";
 			 									 };
+			 class addNewDiary {
+				 										description = "Add a defined Diary Record to Client";
+			 									 };
+				
 		 };
 	};
