@@ -1,0 +1,21 @@
+onLoadName = "Operation Final Strike";
+author = "Architheutis75 (MSOT)";
+OnLoadMission = "Finaler Schlag gegen den Feind! Auf Tanoa stationierte gegenerische Einheiten und deren Nachschub und Versorgung sollen ausgeschaltet werden!";
+loadScreen =  "Bilder\FinalStrike.paa";
+
+
+
+class Header
+{
+ gameType = COOP;
+ minPlayers = 1;
+ maxPlayers = 4;
+};
+
+
+respawn = 3;
+respawndelay = 30;
+disabledAI = 1;
+
+
+#include "config_all.hpp"
