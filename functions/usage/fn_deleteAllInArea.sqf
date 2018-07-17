@@ -19,8 +19,8 @@ Author: Fry
 ----------------------------------------------------------------------------------------------------------------- */
 
 params ["_pos","_radius"];
-
-private _simpleObjects = (allSimpleObject []) select {(_x distance _pos) >= _radius};
+private _all_s_obj = allSimpleObjects [];
+private _simpleObjects = _all_s_obj select {_x distance _pos <= _radius};
 If(count _simpleObjects > 0)then
 {
   {deleteVehicle _x}forEach (nearestObjects [_pos, ["all"],_radius]) + _simpleObjects;
