@@ -64,6 +64,10 @@ if(count (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]) > 
 {
   {_x call MFUNC(tasks,setTask); sleep 6;}forEach (missionNamespace getVariable [STRVAR_DO(missions_stored_tasks),[]]);
 };
+// SPÄTER ENTFERNEN
+sleep 30;
+playMusic "AmbientTrack02d_F_EXP";
+
 };
 
 // Add Tactic Tablet to ACE SelfInteraction

@@ -14,7 +14,7 @@ If(typeName _vecs_arr isEqualTo "ARRAY" && {count _vecs_arr > 0})then
     _pos_asl = GET_POSATL(_vec);
     _dir = GET_DIR(_vec);
     _set_in = [_type,_pos_asl,_dir,_resp_time];
-    _vec setVariable [(format["resp_info_%1",_vec]),_set_in,false];
-    _vec addEventHandler ["MPKilled",{_this call MFUNC(system,setRespawnVecs);}];
+    _vec setVariable [STRVAR_DO(vehicle_respawn_datas),_set_in,false];
+    _vec addMPEventhandler ["mpkilled",{_this spawn MFUNC(system,setRespawnVecs);}];
   }forEach _vecs_arr;
 };
