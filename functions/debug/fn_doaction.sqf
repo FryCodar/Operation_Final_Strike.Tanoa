@@ -22,7 +22,7 @@ params ["_obj","_caller","_idx","_xtra"];
             // ERSTER TESTBEREICH
             hint "Script 1 begins";
             //_____________________________________________________________________________________________________________________________
-            [(position player),300] call MFUNC(usage,deleteAllinArea);
+            [1,"AUTOASSIGNED"] call MFUNC(tasks,setTask);
 
           };
    case 3:{
