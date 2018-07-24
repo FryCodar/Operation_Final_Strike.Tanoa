@@ -22,8 +22,7 @@ params ["_obj","_caller","_idx","_xtra"];
             // ERSTER TESTBEREICH
             hint "Script 1 begins";
             //_____________________________________________________________________________________________________________________________
-            [1,"AUTOASSIGNED"] call MFUNC(tasks,setTask);
-
+          
           };
    case 3:{
             //ZWEITER TESTBEREICH
