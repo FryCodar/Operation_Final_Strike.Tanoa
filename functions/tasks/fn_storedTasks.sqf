@@ -21,29 +21,29 @@ switch(_idx)do
    case 1:{
             _task_name = "Task02";
 
-            _task_description_long = "Hallo das";
+            _task_description_long = "Nehmen Sie das Tablet mit. Damit können Sie der Artillerie Ziele zuweisen und sich damit einen Vorteil verschaffen!";
 
-            _task_description_forHUD = "Hallo";
+            _task_description_forHUD = "Tablet nehmen";
 
-            _task_Type  = "target";
+            _task_Type  = "use";
           };
    case 2:{
-            _task_name = "";
+            _task_name = "Task03";
 
-            _task_description_long = "";
+            _task_description_long = "Bevor wir uns auf das Primärziel, die Zerstörung  der Treibstoffversorgung konzentrieren können, müssen wir die feindlichen Kommunikationsanlagen zerstören, die sich rund um den Mount Tanoa befinden! <br/> <br/> 1. Sie werden auf jeden Fall vor Ort Aufklärung betreiben müssen, um einen erfolgversprechenden Angriffsplan auszuarbeiten und Ziele auszumachen und gegebenfalls Ziele zuzuweisen!  <br/><br/> 2. Ob Sie Drohnen  oder ein Aufklärungsteam einsetzen sowie die Art und Weise, wie Sie die Anlagen zerstören - SIE HABEN DIE WAHL! Sämtliche Fahrzeuge und Ausrüstung auf der Insel stehen Ihnen zur Verfügung! Planen Sie diesen Einsatz sorgfältig!<br/><br/t> +++ Hinweis +++ <br/> Sobald Einheiten ihren Fuß auf die Hauptinsel setzen, können diese nur noch von dieser Insel aus mit Unterstützung versorgt werden oder Ihre Einheiten müssen improvisieren!";
 
-            _task_description_forHUD = "";
+            _task_description_forHUD = "Zerstörung der Kommunikationsanlagen";
 
-            _task_Type  = "";
+            _task_Type  = "destroy";
           };
    case 3:{
-            _task_name = "";
+            _task_name = "Task04";
 
-            _task_description_long = "";
+            _task_description_long = "Irgendwo innerhalb der Kommunikationsanlagen befinden sich die Codes zur Verschlüsselung  der Kommunikation des Gegners! Dringen Sie in die Anlagen ein und beschaffen Sie die Codes!";
 
-            _task_description_forHUD = "T";
+            _task_description_forHUD = "Beschaffung der Kommunikationscodes";
 
-            _task_Type  = "kill";
+            _task_Type  = "search";
           };
    case 4:{
             _task_name = "";

@@ -32,7 +32,7 @@ If(count _holder > 0)then
     case "STRING":{
                     If(count (_holder select 1) > 0)then
                     {
-                      _handle = _this execVM _script;
+                      _handle = _this execVM (_holder select 1);
                       waitUntil{scriptDone _handle};
                     };
                   };

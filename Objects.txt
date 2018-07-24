@@ -5,7 +5,7 @@
           - Suche Zielort
           - Kreire Marker und speicher Ihn ["MAINMARKER",PositionZiel,[Markername,SCRIPTWHENALLTARGETSDOWN]] spawn MSOT_system_fnc_addMissionInfos;                          X
           - Erzeuge Ziel (mit AddAction zbsp) und speichere Ihn in ["MAINTARGETS",PositionZiel,[ZIELOBJECT,Markername,SCRIPT]] spawn MSOT_system_fnc_addMissionInfos;       X
-                                                                   ["MAINACTIONS",[ZIELOBJECT,STATUS,SCRIPTNACHAUSLÖSEN,"BEDINGUNG",BOOLDELETE]] spawn MSOT_system_fnc_addMissionInfos; X
+                                                                   ["MAINACTIONS",[ZIELOBJECT,STATUS("SUCCESS"),SCRIPTNACHAUSLÖSEN,"BEDINGUNG",BOOLDELETE]] spawn MSOT_system_fnc_addMissionInfos; X
                                                                    ["ACTIONSTORAGE",[ZIELOBJECT,ACTIONTYPE,COLOR,TXT]] spawn MSOT_system_fnc_addMissionInfos;
 
           - Erzeuge Trigger und speichere Sie in ["MAINTRIGGER",PositionZiel,[TRIGGERNAME,DOSCRIPT,NUMBERIDX,BOOLDELETEALLTRIGGERATPOS]] spawn MSOT_system_fnc_addMissionInfos;
