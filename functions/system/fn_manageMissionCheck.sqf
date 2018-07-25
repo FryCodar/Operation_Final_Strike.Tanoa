@@ -16,7 +16,7 @@ private ["_check_arr"];
 
 If(isNil "MANAGE_MISSION_HOLDER")then{MANAGE_MISSION_HOLDER = [];};
 _check_arr = _this;
-sleep (1 + (random 3));
+sleep 1;
 
 If((missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false]) || (missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false]))then
 {

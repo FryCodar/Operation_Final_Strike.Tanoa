@@ -11,5 +11,5 @@ Examples:  -
 Author: Fry
 
 ----------------------------------------------------------------------------------------------------------------- */
-sleep (3 + (random 4));
+sleep (1 + (random 2));
 REMOTE_TRIEXESM(_this,system,manageMissionCheck,0)
