@@ -11,7 +11,7 @@ class TAGADD
 															 description = "Check and add a Parachute to given Unit.";
 														 };
 			  class deleteAllinArea {
-																description = "Delete all Objects in a defined Area."
+																description = "Delete all Objects in a defined Area.";
 															};
 			  class doService {
 					                description = "Servicing and Reload Vehicles.";

@@ -118,8 +118,8 @@ If(count _types_arr > 0)then
         _vec_type = If(count _types_arr > 1)then{selectRandom _types_arr}else{(_types_arr # 0)};
         If(_use_streets)then
         {
-          _v_pos = (_new_pos # _i);
-          _vec = [(_v_pos # 0),(_v_pos # 1),_vec_type,_grp] call BFUNC(spawnVehicle);
+          _v_pos = (_new_pos select _i);
+          _vec = [(_v_pos select 0),(_v_pos select 1),_vec_type,_grp] call BFUNC(spawnVehicle);
         }else{
                 switch(_location)do
                 {
@@ -128,7 +128,7 @@ If(count _types_arr > 0)then
                                 _vec = [_v_pos,(random 360),_vec_type,_grp] call BFUNC(spawnVehicle);
                               };
                   case "BORDER":{
-                                  _v_pos = [(_new_pos # 0),_radius,10] call MFUNC(geometry,getCirclePos);
+                                  _v_pos = [(_new_pos select 0),_radius,10] call MFUNC(geometry,getCirclePos);
                                   _vec = [_v_pos,(_new_pos # 1),_vec_type,_grp] call BFUNC(spawnVehicle);
                                 };
                 };

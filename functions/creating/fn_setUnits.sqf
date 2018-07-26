@@ -48,7 +48,7 @@ private ["_output","_do_your_job","_main_pos","_spawn_pos","_work_arr","_allowed
          "_x","_setting_grp_num","_setting_unit_num","_grp_crea","_group_classes","_unit_crea","_grp_arr","_grp","_house_ctrl_arr","_set_in_house","_house_ctrl",
          "_ctrl_num","_house_lvl","_unit","_spawn_pos_holder","_unit_counter","_housew_arr","_everyhouse","_gethouse","_house_spawn","_border_pos","_searched_house"];
 
-params ["_position","_radius","_grp_num","_units_in_grp_num","_group_choice","_location_idx",["_behaviour_idx","CARELESS"],["_combat_idx","YELLOW"]];
+params ["_pos","_radius","_grp_num","_units_in_grp_num","_group_choice","_location_idx",["_behaviour_idx","CARELESS"],["_combat_idx","YELLOW"]];
 
 IF(count MSOT_MEN == 0 && count MSOT_SFMEN == 0) exitWith {LOG_ERR("Control MSOT_MEN ARRAY");};
 
@@ -62,8 +62,8 @@ If(_do_your_job)then
   _everyhouse = false;
   switch(true)do
   {
-    case (typeName (_position select 0) == "ARRAY" && typeName (_position select 1) == "ARRAY"):{_main_pos = (_position select 0);_spawn_pos = (_position select 1);};
-    case (typeName (_position select 0) == "SCALAR" && typeName (_position select 1) == "SCALAR"):{_main_pos = _position;_spawn_pos = _position;};
+    case ((typeName (_pos select 0)) isEqualTo "ARRAY" && (typeName (_pos select 1)) isEqualTo "ARRAY"):{_main_pos = (_pos select 0);_spawn_pos = (_pos select 1);};
+    case ((typeName (_pos select 0)) isEqualTo "SCALAR" && (typeName (_pos select 1)) isEqualTo "SCALAR"):{_main_pos = _pos;_spawn_pos = _pos;};
   };
   switch(_location_idx)do
   {

@@ -19,16 +19,18 @@ Author: Fry
 ------------------------------------------------------------------------------------------------------------- */
 private ["_output","_next_streetsblock","_dir","_is_ok","_check_arr","_chk_dir","_chk_angle"];
 params ["_streetblockname","_idx",["_optpos",[]]];
+
 _output = [];
 _dir = 0;
-If(_idx > 1)then{If(count _optpos <= 2)exitWith {LOG_ERR("GRAD_spawnhelp_fnc_getStreetDir: NO OPTIONAL POSITION FOUND!");};};
+
+If(_idx > 1)then{If(count _optpos <= 2)exitWith {LOG_ERR("MSOT_spawnhelp_fnc_getStreetDir: NO OPTIONAL POSITION FOUND!");};};
 _next_streetsblock = roadsConnectedTo _streetblockname;
 switch(_idx)do
 {
   case 1:{
            If(count _next_streetsblock > 0)then
            {
-             _dir = GET_DIRPOS((position _streetblockname),(position (_next_streetsblock select 0)));
+             _dir = (position _streetblockname) getDir (position (_next_streetsblock select 0));
            }else{_dir = (random 360);};
            _output = [(position _streetblockname),_dir];
          };
@@ -38,19 +40,19 @@ switch(_idx)do
               _is_ok = true;
               _check_arr = [];
               {
-                _chk_dir = GET_DIRPOS((position _streetblockname),(position _x));
+                _chk_dir = (position _streetblockname) getDir (position _x);
                 _chk_angle = [(position _streetblockname),_chk_dir,180,_optpos] call BFUNC(inAngleSector);
                 If(_chk_angle && _is_ok)then
                 {_check_arr = [_chk_dir]; _is_ok = false;};
               }forEach _next_streetsblock;
-              If(count _check_arr > 0)then{_dir = (_check_arr select 0);}else{_dir = GET_DIRPOS((position _streetblockname),_optpos);};
-            }else{_dir = GET_DIRPOS((position _streetblockname),_optpos);};
+              If(count _check_arr > 0)then{_dir = (_check_arr select 0);}else{_dir = (position _streetblockname) getDir _optpos;};
+            }else{_dir = (position _streetblockname) getDir _optpos;};
             _output = [(position _streetblockname),_dir];
           };
    case 3:{
-            _dir = GET_DIRPOS((position _streetblockname),_optpos;
+            _dir = (position _streetblockname) getDir _optpos;
             _output = [(position _streetblockname),_dir];
           };
-  default {LOG_ERR("GRAD_spawnhelp_fnc_getStreetDir: NO POSSIBLE INDEX NUMBER FOUND!");};
+  default {LOG_ERR("MSOT_spawnhelp_fnc_getStreetDir: NO POSSIBLE INDEX NUMBER FOUND!");};
 };
 _output

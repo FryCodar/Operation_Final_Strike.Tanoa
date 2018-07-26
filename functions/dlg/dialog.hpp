@@ -44,7 +44,7 @@ onUnload = "uiNamespace setVariable ['msot_dlg',[]];";
       colorShadow[] = {0,0,0,0};
     	colorBorder[] = {0,0,0,0};
 			x = X_CENTERED(0.07);
-			y = Y_CALC(0.797)//0.797 * safezoneH + safezoneY;
+			y = Y_CALC(0.797);//0.797 * safezoneH + safezoneY;
 			w = W_SIZE(0.07);
 			h = H_SIZE(0.043);
 			text = "";
@@ -62,7 +62,7 @@ onUnload = "uiNamespace setVariable ['msot_dlg',[]];";
       colorShadow[] = {0,0,0,0};
     	colorBorder[] = {0,0,0,0};
 			x = X_LEFT_SIDED(0.17,0.08);
-			y = Y_UP_SIDED(0.2,0.08)
+			y = Y_UP_SIDED(0.2,0.08);
 			w = W_SIZE(0.17);
 			h = H_SIZE(0.2);
 			text = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\artillery_ca.paa";
@@ -79,7 +79,7 @@ onUnload = "uiNamespace setVariable ['msot_dlg',[]];";
       colorShadow[] = {0,0,0,0};
     	colorBorder[] = {0,0,0,0};
 			x = X_RIGHT_SIDED(0,0.08);
-			y = Y_UP_SIDED(0.2,0.08)
+			y = Y_UP_SIDED(0.2,0.08);
 			w = W_SIZE(0.17);
 			h = H_SIZE(0.2);
 			text = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\supplydrop_ca.paa";
@@ -96,7 +96,7 @@ onUnload = "uiNamespace setVariable ['msot_dlg',[]];";
       colorShadow[] = {0,0,0,0};
     	colorBorder[] = {0,0,0,0};
 			x = X_LEFT_SIDED(0.17,0.08);
-			y = Y_DOWN_SIDED(0,0.08)
+			y = Y_DOWN_SIDED(0,0.08);
 			w = W_SIZE(0.17);
 			h = H_SIZE(0.2);
       text = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\cas_ca.paa";
@@ -113,7 +113,7 @@ onUnload = "uiNamespace setVariable ['msot_dlg',[]];";
       colorShadow[] = {0,0,0,0};
     	colorBorder[] = {0,0,0,0};
 			x = X_RIGHT_SIDED(0,0.08);
-			y = Y_DOWN_SIDED(0,0.08)
+			y = Y_DOWN_SIDED(0,0.08);
 			w = W_SIZE(0.17);
 			h = H_SIZE(0.2);
 			text = "\a3\Ui_f\data\GUI\Rsc\RscDisplayArsenal\gps_ca.paa";
@@ -155,7 +155,7 @@ class MSOT_ARTILLERY_TABLE
         colorShadow[] = {0,0,0,0};
        	colorBorder[] = {0,0,0,0};
    			x = X_CENTERED(0.07);
-   			y = Y_CALC(0.797)//0.797 * safezoneH + safezoneY;
+   			y = Y_CALC(0.797);//0.797 * safezoneH + safezoneY;
    			w = W_SIZE(0.07);
    			h = H_SIZE(0.043);
    			text = "";
@@ -190,7 +190,7 @@ class MSOT_ARTILLERY_TABLE
         y = Y_CALC(0.240);
         w = W_SIZE(0.316);
         h = H_SIZE(0.09);
-        onLBSelChanged = "[1,(_this select 1)] spawn MSOT_dlg_fnc_wowArtillery;"
+        onLBSelChanged = "[1,(_this select 1)] spawn MSOT_dlg_fnc_wowArtillery;";
       };
       class DIARSC(AddBtn_Artillery,ListBtn): DIARSC(normal,RscButton)
       {
@@ -241,7 +241,7 @@ class MSOT_ARTILLERY_TABLE
         y = Y_CALC(0.397);
         w = W_SIZE(0.316);
         h = H_SIZE(0.09);
-        onLBSelChanged = "[3,(_this select 1)] spawn MSOT_dlg_fnc_wowArtillery;"
+        onLBSelChanged = "[3,(_this select 1)] spawn MSOT_dlg_fnc_wowArtillery;";
       };
       class DIARSC(Text1_Artillery,InfoText): DIARSC(normal,RscText)
       {

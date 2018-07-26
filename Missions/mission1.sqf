@@ -30,5 +30,7 @@ switch(_idx)do
          };
   case 3:{
             [1,"SUCCEEDED"] call MFUNC(tasks,setTask);
+            sleep 6;
+            [1] execVM "Missions\mission2.sqf";
          };
 };

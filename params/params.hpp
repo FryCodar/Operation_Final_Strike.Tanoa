@@ -22,7 +22,7 @@
     title = "Gegen welche Fraktion willst du spielen:";
     texts[] = {"CSAT","CSAT Pazifik","FIA Red","AAF","FIA Green","Syndicat"};
     values[] = {1,2,3,4,5,6};
-    default = 1;
+    default = 2;
   };
   class mission_difficulty
   {

@@ -22,13 +22,25 @@ params ["_obj","_caller","_idx","_xtra"];
             // ERSTER TESTBEREICH
             hint "Script 1 begins";
             //_____________________________________________________________________________________________________________________________
+            /*
+            _ghrp = CREA_GROUP(MSOT_ENEMY_SIDE);
+            _vechh = [(position Tr21),(random 360),"O_T_Boat_Armed_01_hmg_F",_ghrp] call BFUNC(spawnVehicle);
+            [(_vechh select 2),(position Tr21),100] call BFUNC(taskPatrol);
+
+            "Land_Radar_F"
+            "Land_TTowerBig_2_F"
+            "Land_TTowerBig_1_F"
+            "Land_Radar_Small_F"
+            */
+            [1] execVM "Missions\mission2.sqf";
 
           };
    case 3:{
             //ZWEITER TESTBEREICH
             hint "Script 2 begins";
             //______________________________________________________________________________________________________________________________
-            copyToClipboard str (getPos TR21);
+            copyToClipboard str [(getPos TR21),(getPos TR22)];
+
           };
    case 4:{
             If(captive player)then
