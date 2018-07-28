@@ -30,7 +30,7 @@ switch(typeName _posobj)do
   default {If(true) exitWith {LOG_ERR("GRAD_spawnhelp_fnc_checkHouses: NO OBJECT OR POSITION");};};
 };
 
-_house_list = [_position,["House"],_radius,true] call MFUNC(spawnhelp,checkTerrainObj);
+_house_list = [_position,["BUILDING","HOUSE","BUNKER","FORTRESS"],_radius,true] call MFUNC(spawnhelp,checkTerrainObj);
 If(count _house_list > 0)then
 {
   {If(typeOf _x != "")then{ARR_ADDVAR(_house_arr,_x);};}forEach _house_list;

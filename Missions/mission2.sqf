@@ -1,7 +1,7 @@
 If(isMultiplayer)then{If(!isServer)exitWith{};};
 #include "..\msot_macros.hpp"
 
-private ["_main_pos","_main_radius","_base1","_b1_radius","_base2","_b2_radius","_force_calc","_script","_triggername","_car_num"];
+private ["_main_pos","_main_radius","_base1","_b1_radius","_base2","_b2_radius","_force_calc","_script","_triggername","_car_num","_targets","_m_name"];
 params ["_idx"];
 
 _main_pos = [10547.4,11627.6,0];
@@ -10,6 +10,8 @@ _base1 = [10034.2,11780.8,0];
 _b1_radius = 100;
 _base2 = [11042,11484.8,0];
 _b2_radius = 150;
+MSOT_MISSION2 = false;
+MSOT_MISSION2_1 = false;
 
 switch(_idx)do
 {
@@ -20,11 +22,50 @@ switch(_idx)do
            _force_calc = [([] call MFUNC(system,getPlayerCount)),([] call MFUNC(usage,checkNight))] call MFUNC(system,getForcesCalc);
            _car_num = If((_force_calc select 2) < 1)then{2}else{(_force_calc select 2)};
            [[_main_pos,_base1],_b1_radius,(_car_num + 1), "CAR","AREA",true] call MFUNC(creating,setVehicles);
-           [[_main_pos,_base1],_b1_radius,((_force_calc select 0) + 2),(_force_calc select 1),"MIXED_ALL","MIXED"] call MFUNC(creating,setUnits);
+           [[_main_pos,_base1],_b1_radius,((_force_calc select 0) + 1),(_force_calc select 1),"MIXED_ALL","MIXED"] call MFUNC(creating,setUnits);
+           [[_main_pos,_base2],_b2_radius,(_car_num + 1), "CAR","AREA",true] call MFUNC(creating,setVehicles);
+           [[_main_pos,_base2],_b2_radius,((_force_calc select 0) + 1),(_force_calc select 1),"MIXED_ALL","MIXED"] call MFUNC(creating,setUnits);
+           _targets = [_main_pos,["Land_Radar_F","Land_TTowerBig_2_F","Land_TTowerBig_1_F","Land_Radar_Small_F"],_main_radius,true] call MFUNC(spawnhelp,checkObjects);
+           If(count _targets > 0)then
+           {
+             {
+               _x addEventHandler ["Explosion",{If(damage (_this select 0) > 0.9)then{["MAINTARGETS",(_this select 0),"SUCCESS"] spawn MSOT_system_fnc_eventHandling;};}];
+               _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorRed","hd_destroy"] call MSOT_usage_fnc_setMapMarker;
+               ["MAINTARGETS",_main_pos,[_x,_m_name,{hint "Ziel gesprengt!";}]] call MSOT_system_fnc_addMissionInfos;
+             }forEach _targets;
+           };
+           _script = {[2] execVM "Missions\mission2.sqf";};
+           ["MAINMARKER",_main_pos,["",_script]] call MSOT_system_fnc_addMissionInfos;
+           //Dokumente finden
+           _script = {hint "Sie haben die Code-List Nr.2 gefunden!"};
+           ["MAINTARGETS",_base2,[Code02,"Markername",_script]] spawn MSOT_system_fnc_addMissionInfos;
+           _script = {hint "Sie haben die Code-List Nr.1 gefunden!"};
+           ["MAINTARGETS",_base2,[Code01,"Markername",_script]] spawn MSOT_system_fnc_addMissionInfos;
+           _script = {[3] execVM "Missions\mission2.sqf";};
+           ["MAINMARKER",_base2,["",_script]] call MSOT_system_fnc_addMissionInfos;
 
+           {
+             ["MAINACTIONS",[_x,"SUCCESS","Skripte\Collect1.sqf","true",true]] call MSOT_system_fnc_addMissionInfos;
+             ["ACTIONSTORAGE",[_x,"ACTION","LYELLOW","Dokumente nehmen"]] spawn MSOT_system_fnc_addMissionInfos;
+           }forEach [Code01,Code02];
          };
   case 2:{
-
+            [2,"SUCCEEDED"] call MFUNC(tasks,setTask);
+            MSOT_MISSION2 = true;
+            sleep 6;
+            [4] execVM "Missions\mission2.sqf";
+         };
+  case 3:{
+            [3,"SUCCEEDED"] call MFUNC(tasks,setTask);
+            MSOT_MISSION2_1 = true;
+            sleep 6;
+            [4] execVM "Missions\mission2.sqf";
+         };
+  case 4:{
+            If(MSOT_MISSION2 && MSOT_MISSION2_1)then
+            {
+                hint "Super";
+            };
          };
 
 };

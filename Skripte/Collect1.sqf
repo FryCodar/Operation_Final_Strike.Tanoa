@@ -1,6 +1,5 @@
-﻿_unit = Player;
+If(isMultiplayer)then{If(!hasInterface)exitWith{};};
+params ["_obj","_caller","_id","_arguments"];
 
-_unit playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
-sleep 1.0;
-deleteVehicle Code02; 
-
+_caller playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
+sleep 1;
