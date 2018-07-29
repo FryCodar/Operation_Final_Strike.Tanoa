@@ -32,18 +32,18 @@ params ["_obj","_caller","_idx","_xtra"];
             "Land_TTowerBig_1_F"
             "Land_Radar_Small_F"
             */
-            //[1] execVM "Missions\mission2.sqf";
-            _targets = [[10034.2,11780.8,0],["Land_Radar_F","Land_TTowerBig_2_F","Land_TTowerBig_1_F","Land_Radar_Small_F"],100,true] call MFUNC(spawnhelp,checkObjects);
-            If(count _targets > 0)then
-            {
-              {
-                _x addEventHandler ["Explosion",{If(damage (_this select 0) > 0.9)then{["MAINTARGETS",(_this select 0),"SUCCESS"] spawn MSOT_system_fnc_eventHandling;};}];
-                _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorRed","hd_destroy"] call MSOT_usage_fnc_setMapMarker;
-                ["MAINTARGETS",[10034.2,11780.8,0],[_x,_m_name,{hint "Turm gesprengt";}]] call MSOT_system_fnc_addMissionInfos;
-              }forEach _targets;
-            };
-            _script = {Hint "alle Ziele erfüllt";};
-            ["MAINMARKER",[10034.2,11780.8,0],["",_script]] spawn MSOT_system_fnc_addMissionInfos;
+            [4] execVM "Missions\mission2.sqf";
+
+            /*
+            _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
+            _chute setPos [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)];
+            _crate = createVehicle ["B_CargoNet_01_ammo_F", position _chute, [], 0, 'NONE'];
+            _crate attachTo [_chute,[0, 0, -1.3]];
+            waituntil{position _crate select 2 < 1};
+            detach _crate;
+            */
+
+
           };
    case 3:{
             //ZWEITER TESTBEREICH
