@@ -81,7 +81,7 @@ switch("play_faction" call BIS_fnc_getParamValue)do
 
           MSOT_TRANSHELI = ["O_T_VTOL_02_infantry_dynamicLoadout_F"];
 
-          MSOT_AIRFORCE = [];
+          MSOT_AIRFORCE = ["O_Heli_Attack_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_Stealth_F"];
 
           MSOT_DRONES = ["O_T_UGV_01_rcws_ghex_F","O_T_UAV_04_CAS_F","O_T_UGV_01_ghex_F"];
 

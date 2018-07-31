@@ -32,5 +32,8 @@ switch(_idx)do
             [1,"SUCCEEDED"] call MFUNC(tasks,setTask);
             sleep 6;
             [1] execVM "Missions\mission2.sqf";
+            _script = {[1] execVM "Missions\mission3.sqf";};
+            _triggername = ["LEAVE",_main_pos,300] call MFUNC(system,setTrigger);
+            ["MAINTRIGGER",_main_pos,[_triggername,_script,0,true]] call MFUNC(system,addMissionInfos);
          };
 };

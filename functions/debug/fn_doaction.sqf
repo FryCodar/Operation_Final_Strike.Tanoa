@@ -32,7 +32,7 @@ params ["_obj","_caller","_idx","_xtra"];
             "Land_TTowerBig_1_F"
             "Land_Radar_Small_F"
             */
-            [4] execVM "Missions\mission2.sqf";
+            [2] execVM "Missions\mission3.sqf";
 
             /*
             _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
@@ -49,7 +49,7 @@ params ["_obj","_caller","_idx","_xtra"];
             //ZWEITER TESTBEREICH
             hint "Script 2 begins";
             //______________________________________________________________________________________________________________________________
-            copyToClipboard str [(getPos TR21),(getPos TR22)];
+            copyToClipboard str (getPos Tr21);
 
           };
    case 4:{
