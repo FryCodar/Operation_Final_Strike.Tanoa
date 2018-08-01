@@ -37,7 +37,7 @@ switch(true)do
   case (_dir > 360):{_dir = _dir - 360;};
 };
 
-F_LOOP(_i,1,_num)
+F_LOOP(_i,1,(_num - 1))
 {
   If(_allowed)then
   {

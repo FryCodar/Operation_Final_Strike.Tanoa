@@ -827,3 +827,17 @@ class DIARSC(normal,Controls_Group)
 	};
 	class Controls{};
 };
+class DIARSC(normal,mouseHandler): DIARSC(normal,Controls_Group)
+{
+	onMouseHolding		= "";
+	onMouseButtonDown	= "";
+	onMouseButtonUp		= "";
+	onMouseZChanged		= "";
+	onMouseEnter		= "";
+	idc = -1;
+	x = 0.0;
+	y = 0.0;
+	w = 0.0;
+	h = 0.0;
+	colorBackground[] = { 0.2, 0.0, 0.0, 0.0 };
+};

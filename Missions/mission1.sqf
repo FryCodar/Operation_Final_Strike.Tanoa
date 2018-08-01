@@ -5,7 +5,7 @@ private ["_main_pos","_main_radius","_script","_triggername"];
 params ["_idx"];
 
 _main_pos = [2210.77,13445.6,0.0440073];
-_main_radius = 30;
+_main_radius = 40;
 sleep 10;
 switch(_idx)do
 {

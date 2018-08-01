@@ -32,13 +32,13 @@ params ["_obj","_caller","_idx","_xtra"];
             "Land_TTowerBig_1_F"
             "Land_Radar_Small_F"
             */
-            //[2] execVM "Missions\mission3.sqf";
-
+            [2] execVM "Missions\mission3.sqf";
+            /*
             {_grp_arr = [(position HL12),_x] call MFUNC(creating,setDistanceCrew);
              [(_grp_arr select 0),[11931.7,10468.7,0],1000] call BFUNC(taskPatrol);
              sleep 3;
             }forEach [H12,H13];
-            /*
+
             _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
             _chute setPos [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)];
             _crate = createVehicle ["B_CargoNet_01_ammo_F", position _chute, [], 0, 'NONE'];
@@ -46,10 +46,10 @@ params ["_obj","_caller","_idx","_xtra"];
             waituntil{position _crate select 2 < 1};
             detach _crate;
             //_________________________________________________________________________________________________________________________________
-            "O_T_Truck_03_fuel_ghex_F" ||| POSITION_NORMAL: [12104.7,10603.8,0.00143433] DIR: 237.484 <<<]  3 x 316°
-            "O_T_Truck_03_ammo_ghex_F" ||| POSITION_NORMAL: [12033,10608.6,0.00143433] DIR: 41.3431 <<<]    3 x 132°
-            "O_T_APC_Tracked_02_cannon_ghex_F" ||| POSITION_NORMAL: [12283.8,10394.5,0.00143433] DIR: 229.608 <<<]  4 x 149°
-            "O_T_APC_Wheeled_02_rcws_v2_ghex_F" ||| POSITION_NORMAL: [12285.1,10348,0.00143433] DIR: 248.244 <<<] 3 x 335°
+            "O_T_Truck_03_fuel_ghex_F" ||| POSITION_NORMAL: [12104.7,10603.8,0.00143433] DIR: 237.484 <<<]  3 x 316° XXXX
+            "O_T_Truck_03_ammo_ghex_F" ||| POSITION_NORMAL: [12033,10608.6,0.00143433] DIR: 41.3431 <<<]    3 x 132° XXXX
+            "O_T_APC_Tracked_02_cannon_ghex_F" ||| POSITION_NORMAL: [12283.8,10394.5,0.00143433] DIR: 229.608 <<<]  4 x 149° XXXX
+            "O_T_APC_Wheeled_02_rcws_v2_ghex_F" ||| POSITION_NORMAL: [12285.1,10348,0.00143433] DIR: 248.244 <<<] 3 x 335°  XXXX
             "O_T_MBT_02_cannon_ghex_F"  ||| POSITION_NORMAL: [12312.1,10304.2,0.00157166] DIR: 187.291 <<<] 5 x 271°
             */
           };

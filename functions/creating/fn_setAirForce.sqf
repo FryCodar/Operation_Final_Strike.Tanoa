@@ -28,7 +28,7 @@ Parameters: [POSITION,RADIUS,NUMBER AIR,(VEHICLE CLASSNAME),(BEHAVIORMODE),(COMB
 Returns: [ARRAY with Names of all created Air Vehicles]
 
 Examples:
-            _isStored = [(getMarkerPos "start"), 200,5] spawn MSOT_creating_fnc_setUnits;
+            _isStored = [(getMarkerPos "start"), 200,5] spawn MSOT_creating_fnc_setAirForce;
 
 Author: Fry
 

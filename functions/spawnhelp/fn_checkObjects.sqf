@@ -18,7 +18,7 @@ Author: Fry
 -------------------------------------------------------------------------------------------------- */
 
 private ["_position","_output","_found"];
-params ["_pos","_types","_radius",["_list",false]];
+params ["_pos","_types","_radius",["_list",true]];
 
 _output = If(_list)then{[]}else{0};
 _position = [];

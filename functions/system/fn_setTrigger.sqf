@@ -53,7 +53,7 @@ switch(_idx)do
                                   "nul = ['MAINTRIGGER',thisTrigger] spawn MSOT_system_fnc_manageMissionCheck",
                                   ""
                                  ];
-                      _trigger_name setTriggerActivation ["ANYPLAYER","PRESENT", false];
+                      _trigger_name setTriggerActivation [MSOT_EMYTR_SIDE,"PRESENT", false];
                       _trigger_name setTriggerStatements _exp_arr;
                     };
 
