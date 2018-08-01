@@ -1,7 +1,7 @@
 If(isMultiplayer)then{If(!isServer)exitWith{};};
 #include "..\msot_macros.hpp"
 
-private ["_main_pos","_main_radius","_base1","_b1_radius","_base2","_b2_radius","_resp_pos","_force_calc","_script","_triggername","_car_num","_targets","_m_name"];
+private ["_main_pos","_main_radius","_resp_pos","_force_calc","_script","_triggername"];
 params ["_idx"];
 
 
@@ -18,6 +18,6 @@ switch(_idx)do
          };
   case 2:{
             [4,"AUTOASSIGNED",_main_pos] call MFUNC(tasks,setTask);
-            
+
          };
 };

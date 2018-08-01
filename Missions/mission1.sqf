@@ -15,15 +15,16 @@ switch(_idx)do
             _script = {[2] execVM "Missions\mission1.sqf";};
             _triggername = ["ACTIVATE",_main_pos,_main_radius] call MFUNC(system,setTrigger);
             ["MAINTRIGGER",_main_pos,[_triggername,_script,0,false]] call MFUNC(system,addMissionInfos);
+
+            _script = {[3] execVM "Missions\mission1.sqf";};
+            ["MAINTARGETS",_main_pos,[TACTAB,"",_script]] call MFUNC(system,addMissionInfos);
+            ["MAINACTIONS",[TACTAB,"SUCCESS","Skripte\addTabletFunc.sqf","true",true]] call MSOT_system_fnc_addMissionInfos;
+            ["ACTIONSTORAGE",[TACTAB,"ACTION","GREEN","Tablet nehmen"]] spawn MSOT_system_fnc_addMissionInfos;
          };
   case 2:{
             [0,"SUCCEEDED"] call MFUNC(tasks,setTask);
             [1] call MFUNC(briefing,sendNewDiary);
             "Neues Lageupdate!" remoteExec ["hint",([0,-2] select isDedicated)];
-            _script = {[3] execVM "Missions\mission1.sqf";};
-            ["MAINTARGETS",_main_pos,[TACTAB,"",_script]] call MFUNC(system,addMissionInfos);
-            ["MAINACTIONS",[TACTAB,"SUCCESS","Skripte\addTabletFunc.sqf","true",true]] call MSOT_system_fnc_addMissionInfos;
-            ["ACTIONSTORAGE",[TACTAB,"ACTION","GREEN","Tablet nehmen"]] spawn MSOT_system_fnc_addMissionInfos;
             sleep 5;
             [1,"AUTOASSIGNED",TACTAB] call MFUNC(tasks,setTask);
 

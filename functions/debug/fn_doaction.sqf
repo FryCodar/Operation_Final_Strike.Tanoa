@@ -34,6 +34,10 @@ params ["_obj","_caller","_idx","_xtra"];
             */
             //[2] execVM "Missions\mission3.sqf";
 
+            {_grp_arr = [(position HL12),_x] call MFUNC(creating,setDistanceCrew);
+             [(_grp_arr select 0),[11931.7,10468.7,0],1000] call BFUNC(taskPatrol);
+             sleep 3;
+            }forEach [H12,H13];
             /*
             _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
             _chute setPos [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)];
