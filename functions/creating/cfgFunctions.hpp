@@ -22,6 +22,9 @@ class TAGADD
 			 class setConvoy {
 				 								 description = "Create a Convoy";
 			 								 };
+			class setDistanceCrew {
+															description = "Creates Crew Members for Vehicles in a defined Distance.";
+														};
 			class setCargoUnits {
 														 description = "Fills the Cargo Slots of an Vehicle with Soldiers";
 													 };

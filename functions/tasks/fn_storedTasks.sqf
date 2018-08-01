@@ -46,13 +46,13 @@ switch(_idx)do
             _task_Type  = "search";
           };
    case 4:{
-            _task_name = "";
+            _task_name = "Task05";
 
-            _task_description_long = "";
+            _task_description_long = "1. Aufklärung im Gebiet des RED SPRING TAGEBAUS!<br/><br/> 2. Sofern feindliche Einheiten festgestellt werden, zerstören Sie so viele wie möglich!";
 
-            _task_description_forHUD = "";
+            _task_description_forHUD = "Mission Tagebau";
 
-            _task_Type  = "destroy";
+            _task_Type  = "attack";
           };
    case 5:{
             _task_name = "";

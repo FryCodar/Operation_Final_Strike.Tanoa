@@ -39,7 +39,7 @@ switch("play_faction" call BIS_fnc_getParamValue)do
 
           MSOT_TRANSHELI = ["O_Heli_Light_02_dynamicLoadout_F","O_Heli_Transport_04_bench_F","O_Heli_Light_02_unarmed_F","O_Heli_Transport_04_covered_F"];
 
-          MSOT_AIRFORCE = ["O_Heli_Attack_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_Stealth_F"];
+          MSOT_AIRFORCE = ["O_Heli_Attack_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Heli_Light_02_dynamicLoadout_F","O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_Stealth_F"];
 
           MSOT_DRONES = ["O_UGV_01_rcws_F","O_UAV_02_dynamicLoadout_F","O_UGV_01_F"];
 
@@ -69,7 +69,7 @@ switch("play_faction" call BIS_fnc_getParamValue)do
 
           MSOT_CARS = ["O_T_LSV_02_armed_F","O_T_MRAP_02_hmg_ghex_F","O_T_MRAP_02_gmg_ghex_F","O_T_MRAP_02_ghex_F"],
 
-          MSOT_TANKS = ["O_T_MBT_02_cannon_ghex_F"];
+          MSOT_TANKS = ["O_T_MBT_02_cannon_ghex_F","O_T_MBT_04_cannon_F","O_T_MBT_04_command_F"];
 
           MSOT_ARTILLERY = ["O_T_MBT_02_arty_ghex_F"];
 
@@ -81,7 +81,7 @@ switch("play_faction" call BIS_fnc_getParamValue)do
 
           MSOT_TRANSHELI = ["O_T_VTOL_02_infantry_dynamicLoadout_F"];
 
-          MSOT_AIRFORCE = ["O_Heli_Attack_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_Stealth_F"];
+          MSOT_AIRFORCE = ["O_Heli_Attack_02_dynamicLoadout_F","O_Plane_Fighter_02_F","O_Heli_Light_02_dynamicLoadout_F","O_Plane_CAS_02_dynamicLoadout_F","O_Plane_Fighter_02_Stealth_F"];
 
           MSOT_DRONES = ["O_T_UGV_01_rcws_ghex_F","O_T_UAV_04_CAS_F","O_T_UGV_01_ghex_F"];
 

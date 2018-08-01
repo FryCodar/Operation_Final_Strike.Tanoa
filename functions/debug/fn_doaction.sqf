@@ -32,7 +32,7 @@ params ["_obj","_caller","_idx","_xtra"];
             "Land_TTowerBig_1_F"
             "Land_Radar_Small_F"
             */
-            [2] execVM "Missions\mission3.sqf";
+            //[2] execVM "Missions\mission3.sqf";
 
             /*
             _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
@@ -41,9 +41,13 @@ params ["_obj","_caller","_idx","_xtra"];
             _crate attachTo [_chute,[0, 0, -1.3]];
             waituntil{position _crate select 2 < 1};
             detach _crate;
+            //_________________________________________________________________________________________________________________________________
+            "O_T_Truck_03_fuel_ghex_F" ||| POSITION_NORMAL: [12104.7,10603.8,0.00143433] DIR: 237.484 <<<]  3 x 316°
+            "O_T_Truck_03_ammo_ghex_F" ||| POSITION_NORMAL: [12033,10608.6,0.00143433] DIR: 41.3431 <<<]    3 x 132°
+            "O_T_APC_Tracked_02_cannon_ghex_F" ||| POSITION_NORMAL: [12283.8,10394.5,0.00143433] DIR: 229.608 <<<]  4 x 149°
+            "O_T_APC_Wheeled_02_rcws_v2_ghex_F" ||| POSITION_NORMAL: [12285.1,10348,0.00143433] DIR: 248.244 <<<] 3 x 335°
+            "O_T_MBT_02_cannon_ghex_F"  ||| POSITION_NORMAL: [12312.1,10304.2,0.00157166] DIR: 187.291 <<<] 5 x 271°
             */
-
-
           };
    case 3:{
             //ZWEITER TESTBEREICH

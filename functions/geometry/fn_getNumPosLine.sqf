@@ -7,7 +7,7 @@ Description: Finds X positions on a line around a position with given vector.
 
 Parameters: [Position,Distance,Number,Degrees]
 
-            - Important: Distances under 5 metres are not allowed!
+            - Important: Distances under 5 meters are not allowed!
 
 Returns:  ARRAY with Positions  (Array select 0 is in Function given Position)
 Examples:

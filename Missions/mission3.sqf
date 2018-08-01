@@ -14,10 +14,10 @@ switch(_idx)do
   case 1:{
             [2] call MFUNC(briefing,sendNewDiary);
             "Neues Lageupdate!" remoteExec ["hint",([0,-2] select isDedicated)];
-            MSOT_MISSION_MARKER = []
-            _marker = createMarker ["Tagebau", position Tagebau01];
-          	"Tagebau" setMarkerColor "ColorRed";
-          	"Tagebau" setMarkerType "o_installation";
-          	"Tagebau" setMarkerText "Tagebau RED SPRING";
+            MSOT_MISSION_MARKER = [_main_pos,"Tagebau","ICON",[1,1],"ColorRed","o_installation","",0,"Tagebau RED SPRING"] call MFUNC(usage,setMapMarker);
+         };
+  case 2:{
+            [4,"AUTOASSIGNED",_main_pos] call MFUNC(tasks,setTask);
+            
          };
 };

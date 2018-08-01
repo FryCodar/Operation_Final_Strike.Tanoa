@@ -21,7 +21,7 @@ private ["_output","_inhousepos","_level_count","_x","_last_levelno","_add_arr",
 params ["_house",["_idx","COUNT"]];
 
 _output = If(_idx == "COUNT")then{0}else{[]};
-_inhousepos = [];
+
 _inhousepos = [_house] call BFUNC(buildingPositions);
 If(typeName _inhousepos != "ARRAY")then{hint str _inhousepos;};
 If(count _inhousepos > 0)then
