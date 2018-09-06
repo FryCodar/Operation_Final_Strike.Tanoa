@@ -30,16 +30,17 @@ switch(_idx)do
            {
              {
                _x addEventHandler ["Explosion",{If(damage (_this select 0) > 0.9)then{["MAINTARGETS",(_this select 0),"SUCCESS"] spawn MSOT_system_fnc_eventHandling;};}];
-               _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorRed","hd_destroy"] call MSOT_usage_fnc_setMapMarker;
-               ["MAINTARGETS",_main_pos,[_x,_m_name,{hint "Ziel gesprengt!";}]] call MSOT_system_fnc_addMissionInfos;
+               _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorOrange","hd_destroy"] call MSOT_usage_fnc_setMapMarker;
+               _script = {"Ziel gesprengt!" remoteExec ["hint",([0,-2] select isDedicated)];};
+               ["MAINTARGETS",_main_pos,[_x,_m_name,_script]] call MSOT_system_fnc_addMissionInfos;
              }forEach _targets;
            };
            _script = {[2] execVM "Missions\mission2.sqf";};
            ["MAINMARKER",_main_pos,["",_script]] call MSOT_system_fnc_addMissionInfos;
            //Dokumente finden
-           _script = {hint "Sie haben die Code-List Nr.2 gefunden!"};
+           _script = {"Sie haben die Code-List Nr.2 gefunden!" remoteExec ["hint",([0,-2] select isDedicated)];};
            ["MAINTARGETS",_base2,[Code02,"Markername",_script]] spawn MSOT_system_fnc_addMissionInfos;
-           _script = {hint "Sie haben die Code-List Nr.1 gefunden!"};
+           _script = {"Sie haben die Code-List Nr.1 gefunden!" remoteExec ["hint",([0,-2] select isDedicated)];};
            ["MAINTARGETS",_base2,[Code01,"Markername",_script]] spawn MSOT_system_fnc_addMissionInfos;
            _script = {[3] execVM "Missions\mission2.sqf";};
            ["MAINMARKER",_base2,["",_script]] call MSOT_system_fnc_addMissionInfos;

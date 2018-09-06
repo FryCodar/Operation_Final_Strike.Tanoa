@@ -39,10 +39,10 @@ switch(_idx)do
             {
               If(!_found)then
               {
-                _idx1 = _forEachIndex; _scan_inner_arr = _x; _scanner_2nd_arr = _scan_inner_arr select 1; _counter = ((count _scanner_2nd_arr) - 1);
+                _idx1 = _forEachIndex; _scan_inner_arr = _x; _scanner_2nd_arr = (_scan_inner_arr select 1); _counter = ((count _scanner_2nd_arr) - 1);
                 F_LOOP(_i,0,_counter)
                 {
-                  _scanner_2nd_inner_arr = _scanner_2nd_arr select _i;
+                  _scanner_2nd_inner_arr = (_scanner_2nd_arr select _i);
                   If((_scanner_2nd_inner_arr select 0) isEqualTo _searched_thing)then
                   {_output = [_idx1,_i];_found = true;_counter = _i;};
                   sleep 0.04;

@@ -37,7 +37,7 @@ while{count _found_pos == 0 && _co < 100}do
  If(count _point > 0)then
  {
    _onmap = [_point] call MFUNC(spawnhelp,isOnMap);
-   _statics = [_point,["Static","House","Tank","Car","StaticWeapon"],_big_radius] call MFUNC(spawnhelp,checkObjects);
+   _statics = [_point,["Static","House","Tank","Car","StaticWeapon"],_big_radius,false] call MFUNC(spawnhelp,checkObjects);
    _slope = [_point] call MFUNC(spawnhelp,getSlope);
    If(!(surfaceIsWater _point) && _onmap && _slope && _statics < 1)then
    {

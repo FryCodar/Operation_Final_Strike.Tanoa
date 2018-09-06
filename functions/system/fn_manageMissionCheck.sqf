@@ -12,19 +12,15 @@ Examples:
 Author: Fry
 
 ----------------------------------------------------------------------------------------------------------------- */
-private ["_check_arr"];
 
 If(isNil "MANAGE_MISSION_HOLDER")then{MANAGE_MISSION_HOLDER = [];};
-_check_arr = _this;
-sleep (1 + (random 2));
+private _check_arr = _this;
+sleep 1;
+missionNamespace setVariable [STRVAR_DO(write_to_manager),true,false];
+ARR_ADDVAR(MANAGE_MISSION_HOLDER,_check_arr);
+missionNamespace setVariable [STRVAR_DO(write_to_manager),false,false];
 
-If((missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false]) || (missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false]))then
+If(!(missionNamespace getVariable [STRVAR_DO(manage_delete_missinfo),false]))then
 {
-  ARR_ADDVAR(MANAGE_MISSION_HOLDER,_check_arr);
-  If(!(missionNamespace getVariable [STRVAR_DO(manage_delete_missinfo),false]))then
-  {
-   [] spawn MFUNC(system,workOffMisHolder);
-  };
-}else{
-  _check_arr spawn MFUNC(system,doMissionCheck);
+  [] spawn MFUNC(system,workOffMisHolder);
 };

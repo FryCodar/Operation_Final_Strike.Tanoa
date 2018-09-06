@@ -12,22 +12,31 @@ Examples:
 Author: Fry
 
 ----------------------------------------------------------------------------------------------------------------- */
-private ["_handle"];
+private ["_in_store","_in_holder","_handle"];
 
 missionNamespace setVariable [STRVAR_DO(manage_delete_missinfo),true,false];
-missionNamespace setVariable [STRVAR_DO(delete_from_missinfo),true,true];
 
-If(missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false])then
-{waitUntil{!(missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false])};};
+_in_store = MANAGE_MISSION_HOLDER;
+MANAGE_MISSION_HOLDER = [];
 
-If(count MANAGE_MISSION_HOLDER > 0)then
+While{count _in_store > 0}do
 {
+  switch(true)do
   {
-    _handle = _x spawn MFUNC(system,doMissionCheck);
-    waitUntil{scriptDone _handle};
-    sleep 1;
-  }forEach MANAGE_MISSION_HOLDER;
-  MANAGE_MISSION_HOLDER = [];
+    case (missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false]):{waitUntil{!(missionNamespace getVariable [STRVAR_DO(write_to_missinfo),false])};};
+    case (missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false]):{waitUntil{!(missionNamespace getVariable [STRVAR_DO(delete_from_missinfo),false])};};
+  };
+  _in_holder = (_in_store select 0);
+  _handle = _in_holder spawn MFUNC(system,doMissionCheck);
+  waitUntil{scriptDone _handle};
+  _in_store deleteAt 0;
+  sleep 1;
+  If(count MANAGE_MISSION_HOLDER > 0)then
+  {
+    If(missionNamespace getVariable [STRVAR_DO(write_to_manager),false])then
+    {waitUntil{!(missionNamespace getVariable [STRVAR_DO(write_to_manager),false])};};
+    ARR_ADDARR(_in_store,MANAGE_MISSION_HOLDER);
+    MANAGE_MISSION_HOLDER = [];
+  };
 };
 missionNamespace setVariable [STRVAR_DO(manage_delete_missinfo),false,false];
-missionNamespace setVariable [STRVAR_DO(delete_from_missinfo),true,true];

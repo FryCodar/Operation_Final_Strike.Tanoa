@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=3069;
+		nextID=3070;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1111;
+		nextID=1115;
 	};
 	class Camera
 	{
-		pos[]={10598.959,587.42859,11039.785};
-		dir[]={0.85735101,-0.24372947,0.45340687};
-		up[]={0.21546079,0.96983927,0.11394549};
-		aside[]={0.46750501,1.9754225e-008,-0.88400829};
+		pos[]={12635.866,408.95023,10311.897};
+		dir[]={-0.80440855,-0.50477916,-0.31339464};
+		up[]={-0.47035265,0.86323482,-0.18324728};
+		aside[]={-0.36303404,5.4674456e-007,0.93182492};
 	};
 };
 binarizationWanted=0;
@@ -20158,8 +20158,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={11919.077,146.57816,10213.948};
-						angles[]={0,3.1692386,0};
+						position[]={12461.032,228.20802,10215.282};
+						angles[]={0,5.3312235,0};
 					};
 					side="Civilian";
 					flags=7;
@@ -20169,7 +20169,6 @@ class Mission
 					};
 					id=2792;
 					type="C_man_p_beggar_F";
-					atlOffset=-1.5258789e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -20218,7 +20217,6 @@ class Mission
 			{
 			};
 			id=2791;
-			atlOffset=-1.5258789e-005;
 		};
 		class Item498
 		{
@@ -27362,12 +27360,12 @@ class Mission
 		class Item668
 		{
 			dataType="Trigger";
-			position[]={11405.244,218.09203,10615.689};
+			position[]={9185.0625,149.43779,9569.6836};
 			class Attributes
 			{
 				name="Tr21";
-				sizeA=500;
-				sizeB=500;
+				sizeA=300;
+				sizeB=300;
 			};
 			id=3046;
 			type="EmptyDetectorAreaR50";

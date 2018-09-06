@@ -33,6 +33,10 @@ params ["_obj","_caller","_idx","_xtra"];
             "Land_Radar_Small_F"
             */
             [2] execVM "Missions\mission3.sqf";
+            sleep 10;
+            _holder = missionNamespace getVariable [STRVAR_DO(mission_main_targets),[]];
+            hint str _holder;
+            copyToClipboard str _holder;
             /*
             {_grp_arr = [(position HL12),_x] call MFUNC(creating,setDistanceCrew);
              [(_grp_arr select 0),[11931.7,10468.7,0],1000] call BFUNC(taskPatrol);
@@ -57,8 +61,10 @@ params ["_obj","_caller","_idx","_xtra"];
             //ZWEITER TESTBEREICH
             hint "Script 2 begins";
             //______________________________________________________________________________________________________________________________
-            copyToClipboard str (getPos Tr21);
-
+            //copyToClipboard str (getPos Tr21);
+            _holder = missionNamespace getVariable [STRVAR_DO(mission_main_targets),[]];
+            hint str _holder;
+            copyToClipboard str _holder;
           };
    case 4:{
             If(captive player)then

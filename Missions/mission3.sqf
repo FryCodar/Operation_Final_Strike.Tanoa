@@ -1,7 +1,7 @@
 If(isMultiplayer)then{If(!isServer)exitWith{};};
 #include "..\msot_macros.hpp"
 
-private ["_main_pos","_main_radius","_resp_pos","_force_calc","_script","_triggername","_veh"];
+private ["_main_pos","_main_radius","_resp_pos","_force_calc","_script","_triggername","_veh","_car_num","_m_name"];
 params ["_idx"];
 
 
@@ -19,6 +19,7 @@ switch(_idx)do
          };
   case 2:{
             //[4,"AUTOASSIGNED",_main_pos] call MFUNC(tasks,setTask);
+
             private _vec_types = ["O_Heli_Attack_02_dynamicLoadout_F","O_Heli_Light_02_dynamicLoadout_F"];
             private _helipads = [_main_pos,["Land_HelipadCircle_F"],500] call MFUNC(spawnhelp,checkObjects);
             If(count _helipads > 0)then
@@ -44,6 +45,7 @@ switch(_idx)do
             {
               {_veh = createVehicle ["O_T_Truck_03_ammo_ghex_F",_x, [], 0,"NONE"];_veh setDir 132;ARR_ADDVAR(_vec_list,_veh);}forEach _vec_posses;
             };
+            /*
             _vec_posses = [[12283.8,10394.5,0.00143433],9,4,217] call MFUNC(geometry,getNumPosLine);
             If(count _vec_posses > 0)then
             {
@@ -59,6 +61,30 @@ switch(_idx)do
             {
               {_veh = createVehicle ["O_T_MBT_02_cannon_ghex_F",_x, [], 0,"NONE"];_veh setDir 271;ARR_ADDVAR(_vec_list,_veh);}forEach _vec_posses;
             };
-            
+            */
+            {
+              [_x,"SUCCESS"] call MFUNC(system,addKilledEvent);
+              //nach Test den Hint ändern
+              ["MAINTARGETS",_main_pos,[_x,"",{hint "FHZ zerstört!"}]] call MSOT_system_fnc_addMissionInfos;
+            }forEach _vec_list;
+            /*
+            _force_calc = [([] call MFUNC(system,getPlayerCount)),([] call MFUNC(usage,checkNight))] call MFUNC(system,getForcesCalc);
+            _car_num = If((_force_calc select 2) < 1)then{2}else{(_force_calc select 2)};
+            _veh = [_main_pos,(_main_radius - 100),(_car_num + 1), "APC_AAIR","AREA",true] call MFUNC(creating,setVehicles);
+            {
+              _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorOrange","hd_destroy","",0,"AA Site"] call MSOT_usage_fnc_setMapMarker;
+              _script = {"Eine Luftabwehr ausgeschaltet!" remoteExec ["hint",([0,-2] select isDedicated)];};
+              ["MAINTARGETS",_main_pos,[_x,_m_name,_script]] call MSOT_system_fnc_addMissionInfos;
+            }forEach _veh;
+            _veh = [_main_pos,(_main_radius - 100),(_car_num + 1), "ARTY","AREA",true] call MFUNC(creating,setVehicles);
+            {
+              _m_name = [(position _x),(format["%1_%2",_x,_forEachIndex]),"ICON",[1,1],"ColorRed","hd_destroy","",0,"Artillery Site"] call MSOT_usage_fnc_setMapMarker;
+              _script = {"Eine Artillerie ausgeschaltet!" remoteExec ["hint",([0,-2] select isDedicated)];};
+              ["MAINTARGETS",_main_pos,[_x,_m_name,_script]] call MSOT_system_fnc_addMissionInfos;
+            }forEach _veh;
+            _veh = [_main_pos,_main_radius,(_car_num + 1), "CAR","AREA"] call MFUNC(creating,setVehicles);
+            _veh = [_main_pos,_main_radius,(_car_num + 1), "TANK","AREA"] call MFUNC(creating,setVehicles);
+            [_main_pos,_main_radius,((_force_calc select 0) + 2),(_force_calc select 1),"MIXED_ALL","AREA"] call MFUNC(creating,setUnits);
+            */
          };
 };
