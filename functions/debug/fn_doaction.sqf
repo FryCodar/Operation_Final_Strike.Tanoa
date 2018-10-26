@@ -43,6 +43,12 @@ params ["_obj","_caller","_idx","_xtra"];
              sleep 3;
             }forEach [H12,H13];
 
+
+            //  hint str [safezoneW,safezoneX,(safezoneW + safezoneX)];
+            //  copyToClipboard str [safezoneW,safezoneX,(safezoneW + safezoneX)];
+            //private _action = ["msot_tactic_tablet","Open Tablet","",{createDialog "MSOT_Tactic_Table"},{true}] call ace_interact_menu_fnc_createAction;
+            //[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+            //[0,"AUTOASSIGNED",(getMarkerPos "Ziel1")] call MSOT_tasks_fnc_setTask;
             _chute = createVehicle ["B_Parachute_02_F", [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)], [], 0, 'FLY'];
             _chute setPos [((getPosATL player) select 0),((getPosATL player) select 1),(((getPosATL player) select 2) + 200)];
             _crate = createVehicle ["B_CargoNet_01_ammo_F", position _chute, [], 0, 'NONE'];
