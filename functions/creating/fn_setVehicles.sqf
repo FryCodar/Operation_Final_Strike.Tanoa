@@ -35,7 +35,7 @@ Parameters: [POSITION,RADIUS,NUMBER VEHICLES,INDEX,LOCATION,(NIGHTMODE),(BEHAVIO
 Returns: [ARRAY with Names of all created Vehicles]
 
 Examples:
-            _isStored = [(getMarkerPos "start"), 200,5, "CAR","AREA"] call MSOT_creating_fnc_setUnits;
+            _isStored = [(getMarkerPos "start"), 200,5, "CAR","AREA"] call MSOT_creating_fnc_setVehicles;
 
 Author: Fry
 
